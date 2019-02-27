@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/login.css" type='text/css'>
+    <title>Chat app login page</title>
+</head>
+
+<body class="signIn" ng-controller="loginCtrl">
+    <div class="imageLog">
+        <!--form for login page-->
+        <form method="POST" name="loginForm">
+            <div class="loginBox">
+                <h2>Login</h2>
+                <div class="emailBox">
+                    <!--label and input box for email with user validations-->
+                    <label for="email">Email-id</label>
+                    <input type="email" name="email" ng-model="email" placeholder="Email-id" required />
+                    <span style="color:red" font-size=15px ng-show="loginForm.email.$dirty || loginForm.email.$touched" class="ng-hide">
+                        <span ng-show="loginForm.email.$touched && loginForm.email.$error.$invalid">Invalid Email-id.</span>
+                        <span ng-show="loginForm.email.$error.email">Enter a valid email address.</span>
+                    </span>
+                </div>
+                <div class="passwordBox">
+                    <!--label and input box for password with user validations-->
+                    <label for="password">Password</label>
+                    <input type="password" name="password" ng-model="password" placeholder="Password" required />
+                </div>
+                <div class="loginbtn">
+                    <!--button to login-->
+                    <button type="submit" class="button" ng-click="login()"
+                        ng-disabled="loginForm.$invalid">Login</button>
+                </div>
+                <!--link for forgotPassword-->
+                <p class="forgotPassword">
+                    <a ui-sref="forgotPassword">Forgot password</a>
+                </p>
+                <p class="login-signup">
+                    <a ui-sref="register">Register</a>
+                    <!--link to register-->
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

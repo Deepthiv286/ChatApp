@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular-route.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script> -->
+    <script src="./app.js"></script>
+    <script src="./controllers/loginControl.js"></script>
+    <script src="./services/loginService.js"></script>
+    <script src="./controllers/registerControl.js"></script>
+    <script src="./services/registerService.js"></script>
+    <script src="./controllers/forgotPasswordControl.js"></script>
+    <script src="./services/forgotPasswordService.js"></script>
+    <script src="./controllers/resetPasswordControl.js"></script>
+    <script src="./services/resetPasswordService.js"></script>
+    <script src="./services/chatService.js"></script>
+    <script src="./controllers/chatController.js"></script>
+
+    <link rel="stylesheet" href="css/login.css" type='text/css'>
+    <link rel="stylesheet" href="css/register.css" type='text/css'>
+    <link rel="stylesheet" href="css/forgotPassword.css" type='text/css'>
+    <link rel="stylesheet" href="css/resetPassword.css" type='text/css'>
+    <link rel="stylesheet" href="css/dashBoard.css" type="text/css">
+</head>
+
+<body ng-app="myChatApp">
+    <ui-view>
+
+    </ui-view>
+</body>
+
+</html>

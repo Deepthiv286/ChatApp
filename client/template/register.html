@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/register.css" type='text/css'>
+    <title>Registration Page</title>
+</head>
+
+<body class="signUp" ng-controller="registerCtrl">
+        <div class="imageReg">
+            <form method="POST" name="registerForm">
+                <!--form for registration page-->
+                <div class="registerBox">
+                    <h2>Registration</h2>
+                    <div class="fn">
+                        <!--text box for first name-->
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" ng-pattern="/^[a-zA-Z]*$/" ng-model="firstName"
+                            placeholder="First name" required />
+                    </div>
+                    <!-- <span style="color:red" ng-show="registerForm.firstName.$dirty && registerForm.firstName.$invalid"
+                        class="ng-hide"><br>
+                        <span ng-show="registerForm.firstName.$ng-pattern">Please fill out this field.</span>
+                    </span><br> -->
+                    <div class="ln">
+                        <!--text box for last name-->
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" ng-pattern="/^[a-zA-Z]*$/" ng-model="lastName"
+                            placeholder="Last name" required />
+                    </div>
+                    <!-- <span style="color:red" ng-show="post.lastName.$dirty && post.lastName.$invalid" class="ng-hide"><br>
+                    <span ng-show="post.lastName.$error.required">Please fill out this field.</span>
+                </span><br> -->
+                    <div class="em">
+                        <!--text box for email-->
+                        <label for="email">Email-Id</label>
+                        <input type="email" name="email" ng-model="email" placeholder="email" required />
+                    </div>
+                    <!-- <span style="color:red" ng-show="post.email.$dirty && post.email.$invalid" class="ng-hide"><br>
+                    <span ng-show="post.email.$error.required">Please fill out this field.</span>
+                </span><br> -->
+                    <div class="pwd">
+                        <!--label and text box for password-->
+                        <label for="password">Password</label>
+                        <input type="password" name="password"
+                            ng-pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,12}$/"
+                            ng-model="password" placeholder="password" required />
+                    </div>
+                    <!-- <span style="color:red" ng-show="post.password.$dirty && post.password.$invalid" class="ng-hide"><br>
+                    <span ng-show="post.password.$error.required">Please fill out this field.</span>
+                </span><br> -->
+                    <div class="conpwd">
+                        <!--label and text box for confirm password-->
+                        <label for="confirmPassword">Confirm-Password</label>
+                        <input type="password" name="confirmPassword" ng-model="confirmPassword"
+                            ng-pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,12}$/"
+                            placeholder="confirmPassword" required />
+                    </div>
+                    <!-- <span style="color:red" ng-show="post.confirmPassword.$dirty && post.confirmPassword.$invalid"
+                    class="ng-hide"><br>
+                    <span ng-show="post.confirmPassword.$error.required">Please fill out this field.</span>
+                </span><br> -->
+                    <div class="registerBtn">
+                        <!--button to submit the registration-->
+                        <button type="submit" class="btn" ng-click="register()"
+                            ng-disabled="registerForm.$invalid" ui-sref="login">Signup</button>
+                        <!-- <a ui-sref="login"></a> -->
+                        <!-- incorrect username/password -->
+                        <!-- <span style="color:red">{{ error }}</span> -->
+                        <!--<span ui-sref="login">-->
+                    </div>
+                    <button type="button" class="cancelBtn" ng-click="login()" ui-sref="login">Signin</button>
+                </div>
+            </form>
+        </div>
+</body>
+
+</html>

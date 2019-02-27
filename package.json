@@ -1,0 +1,26 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepthiv286/ChatApp.git"
+  },
+  "author": "Deepthi V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepthiv286/ChatApp/issues"
+  },
+  "homepage": "https://github.com/Deepthiv286/ChatApp#readme",
+  "dependencies": {
+    "angular-ui-router": "^1.0.20",
+    "angularjs": "0.0.1",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
+    "live-server": "^1.2.1"
+  }
+}

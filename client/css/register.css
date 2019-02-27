@@ -1,0 +1,94 @@
+/* css for registration page*/
+h2{
+    font-size: 2em;
+    padding-top:20px;
+    padding-bottom: 20px;
+    color:rgb(13, 104, 146);
+    text-align: center;
+    border-end-end-radius: 2px solid;
+    background: #13303f
+}
+.registerForm{
+    text-align: center;
+    display: inline-block
+}
+.registerBox{
+    background-color: #ffffff;
+    border: 2px solid black;
+    opacity: 0.6;
+    border-radius: 10px;
+    width: 280px;
+    padding: 15px;
+    text-align: left;
+    margin-top: 20px;
+    display: inline-block;
+}
+input{
+    margin-bottom: 10px;
+}
+label {
+    color: rgb(12, 11, 11);
+    font-weight: bold;
+    font-size: 14px;;
+    padding-bottom: 5px;
+    display: block;
+    text-align: left;
+    width: 180px;
+}
+label:after { 
+    content: " : " 
+}
+.imageReg{
+    background: url(../assets/loginBackground.jpg);
+    height: 100%;
+    background: cover;
+    opacity:0.8;                   
+    background-repeat: no-repeat;
+}
+.signUp{
+    text-align:center;
+}
+.registerbtn{
+    cursor: pointer;
+    display: inline-block;
+    width: 65px;
+    text-align: center;
+    margin-left: 50px;
+    margin-inline-end: 48px;
+}
+.btn{
+    background: #5289a8;
+    font-size: 18px;
+    font-style: initial;
+    color: black;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 6px;
+    margin: 1px;
+    margin-top: 5px;
+}
+.btn:hover{
+    background-color: #0f6496;
+}
+.btn:active {
+    background-color: #0f6496;
+    transform: translateY(4px);
+}
+.cancelBtn{
+    background: #5289a8;
+    font-size: 18px;
+    font-style: initial;
+    color: black;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 6px;
+    margin: 1px;
+    margin-top: 5px;
+}
+.cancelBtn:hover{
+    background-color: #0f6496;
+}
+.cancelBtn:active {
+    background-color: #0f6496;
+    transform: translateY(4px);
+}

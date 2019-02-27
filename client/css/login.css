@@ -1,0 +1,86 @@
+/* css for login page*/
+h2{
+    font-size: 2em;
+    padding: 15px;
+    color:black;
+    text-align: center;
+    border-end-end-radius: 2px solid;
+    background: #13303f
+}
+.signIn{
+    text-align:center;
+}
+.imageLog{
+    background: url(../assets/loginBackground.jpg);
+    opacity: 0.8;
+    margin: auto;
+    padding-bottom: 8%;
+    width: 80em;
+    height: 38em;
+    background-size: cover;                
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+.loginBox{
+    background-color: #e9e9e9;
+    border: 2px solid black;
+    opacity: 0.6;
+    text-align: center;
+    position: absolute;
+    width:300px;
+    padding: 15px;
+    margin-left: 38%;
+    margin-top: 8%;
+    font-size: 15px;
+    border-radius: 10px;
+}
+label {
+    color: rgb(12, 11, 11);
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px;
+    display: block;
+    text-align: left;
+    width: 100px;
+}
+label:after { 
+    content: " : " 
+}
+.emailBox{
+    text-align: left;
+    margin-bottom: 14px;
+}
+.passwordBox{
+    text-align: left;
+    margin-bottom: 14px;
+}
+.button{
+    background: #5289a8;
+    font-size: 18px;
+    font-style: initial;
+    color: black;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 6px;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+.button:hover {
+    background-color: #0f6496;
+}
+.button:active {
+    background-color: #0f6496;
+    transform: translateY(4px);
+}
+.forgotPassword{
+    display: inline;
+    padding-inline-end: 50px;
+    font-size: 15px;
+}
+.login-signup{
+    display: initial;
+    font-size: 15px;
+}
+a{
+    color: #133cc4;
+}
