@@ -36,7 +36,7 @@ userModel.prototype.register = (body, callBack) => {
     try {
         user.find({ 'email': body.email }, (err, data) => {
             if (err) {
-                console.log("Error in registration");
+                console.log("Error in registration schema");
                 return callBack(err);
             }
             else if (data.length > 0) {
@@ -48,8 +48,7 @@ userModel.prototype.register = (body, callBack) => {
                     'firstName': body.firstName,
                     'lastName': body.lastName,
                     'email': body.email,
-                    'password': hash(body.password),
-                    'confirmPassword': hash(body.confirmPassword)
+                    'password': hash(body.password)
                 });
                 newUser.save((err, result) => {
                     if (err) {
@@ -136,7 +135,7 @@ userModel.prototype.resetPassword = (res, callBack) => {
         console.log(error.message);
     }
 }
-userModel.prototype.getAllUser = (callBack) => {
+userModel.prototype.getAllUser = (req,callBack) => {
     user.find({}, (err, data) => {
         if (err) {
             return callBack("Error in the model" + err);

@@ -8,27 +8,34 @@
 <body class="signIn" ng-controller="loginCtrl">
     <div class="imageLog">
         <!--form for login page-->
-        <form method="POST" name="loginForm">
+        <form method="POST" name="loginForm" novalidate>
             <div class="loginBox">
                 <h2>Login</h2>
                 <div class="emailBox">
                     <!--label and input box for email with user validations-->
                     <label for="email">Email-id</label>
                     <input type="email" name="email" ng-model="email" placeholder="Email-id" required />
-                    <span style="color:red" font-size=15px ng-show="loginForm.email.$dirty || loginForm.email.$touched" class="ng-hide">
-                        <span ng-show="loginForm.email.$touched && loginForm.email.$error.$invalid">Invalid Email-id.</span>
-                        <span ng-show="loginForm.email.$error.email">Enter a valid email address.</span>
+                    <span style="color:red" ng-show="loginForm.email.$touched && loginForm.email.$invalid">
+                        <span ng-show="loginForm.email.$error.required">Email-id is required.</span>
+                        <span ng-show="loginForm.email.$error.email">Enter a valid email address</span>
                     </span>
                 </div>
                 <div class="passwordBox">
                     <!--label and input box for password with user validations-->
                     <label for="password">Password</label>
-                    <input type="password" name="password" ng-model="password" placeholder="Password" required />
+                    <input type="password" name="password" ng-model="password"
+                        ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,12}$/"
+                        placeholder="Password" required />
+                    <span style="color:red" ng-show="loginForm.password.$touched && loginForm.password.$invalid">
+                        <span ng-show="loginForm.password.$error.required">Password is required.</span>
+                        <span ng-show="loginForm.password.$error.pattern">Password must contain atleast a small
+                            case,capital case,number,special character and length must be between 8-12</span>
+                    </span>
                 </div>
                 <div class="loginbtn">
                     <!--button to login-->
-                    <button type="submit" class="button" ng-click="login()"
-                        ng-disabled="loginForm.$invalid">Login</button>
+                    <button type="submit" class="button" ng-click="login()" ng-disabled="form.$invalid">Login</button>
+                    <span ng-show="form.$error.required && form.$invalid">Enter all the fields</span>
                 </div>
                 <!--link for forgotPassword-->
                 <p class="forgotPassword">

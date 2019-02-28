@@ -12,27 +12,28 @@ const chatSchema = new mongoSchema({
 function chatModel() {
 
 }
-const chatUser = mongoose.model('chat', chatSchema);
+const chat = mongoose.model('chatData', chatSchema);
 
-chatModel.prototype.chatSave = (req, callBack) => {
-    let chatMsg = new chatUser({
-        'senderUserId': req.senderUserId,
-        'senderName': req.senderName,
-        'recieverUserId': req.recieverUserId,
-        'recieverName': req.recieverName,
-        'message': req.message
+chatModel.prototype.addMessage = (chatData, callBack) => {
+    let newMsg = new chat({
+        'senderUserId': chatData.senderUserId,
+        'senderName': chatData.senderName,
+        'recieverUserId': chatData.recieverUserId,
+        'recieverName': chatData.recieverName,
+        'message': chatData.message
     });
-    chatMsg.save((err, data) => {
+    newMsg.save((err, data) => {
         if (err) {
             console.log("Storing data failed");
             return callBack(err);
         }
         else {
+            console.log("Chat data saved successfully");
             return callBack(null, data);
         }
     })
 }
-chatModel.prototype.getData = (callBack) => {
+chatModel.prototype.getUserMsg = (req,callBack) => {
     chatUser.find({}, (err, data) => {
         if (err) {
             return callBack("Error in chat model" + err);

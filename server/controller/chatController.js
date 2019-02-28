@@ -1,8 +1,8 @@
-var chatServices = require('../services/chatService');
+const chatServices = require('../services/chatService');
 
-module.exports.chatMessage = (req, res) => {
+module.exports.addMessage = (req, res) => {
     try {
-        chatServices.chatService(req, (err, data) => {
+        chatServices.addMessage(req, (err, data) => {
             if (err) {
                 res(err);
             }
@@ -14,17 +14,17 @@ module.exports.chatMessage = (req, res) => {
         console.log(error.message);
     }
 }
-module.exports.getAllChats = (req, res) => {
+module.exports.message = (req, res) => {
     try {
-        chatServices.getAllChat(req, (err, data) => {
+        chatServices.getUserMsg(req, (err, data) => {
             var response = {};
             if (err) {
-                response.sucess = false;
+                response.success = false;
                 response.result = err;
-                return res.status(500).send(responsee);
+                return res.status(500).send(response);
             }
             else {
-                response.sucess = true;
+                response.success = true;
                 response.result = data;
                 return res.status(200).send(response);
             }

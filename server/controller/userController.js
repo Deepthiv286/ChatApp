@@ -4,18 +4,18 @@ const sendMail = require('../middleware/sendMail');
 
 module.exports.register = (req, res) => {
     try {
-        req.check('firstName', 'First name is not valid').isLength({ min: 3 }).isAlpha();
-        req.check('lastName', 'Last name is not valid').isLength({ min: 1 }).isAlpha();
-        req.check('email', 'Email is not valid').isEmail();
-        req.check('password', 'Password is not valid').isLength({ min: 8 });
-        req.check('confirmPassword','Confirm password is not valid').equals(req.body.password);
+        req.checkBody('firstName', 'First name is not valid').isLength({ min: 3 }).isAlpha();
+        req.checkBody('lastName', 'Last name is not valid').isLength({ min: 1 }).isAlpha();
+        req.checkBody('email', 'Email is not valid').isEmail();
+        req.checkBody('password', 'Password is not valid').isLength({ min: 8 });
+        req.checkBody('confirmPassword','Confirm password is not valid').equals(req.body.password);
         let errors = req.validationErrors();
         let response = {};
         if (errors) {
             console.log(errors);
             response.success = false;
             response.error = errors;
-            return res.status(422).send(response);
+            return res.status(401).send(response);
         }
         else {
             userService.register(req.body, (err, data) => {
@@ -38,15 +38,15 @@ module.exports.register = (req, res) => {
 }
 module.exports.login = (req, res) => {
     try {
-        req.check('email', 'Email is not valid').isEmail();
-        req.check('password', 'Password is not valid').isLength({ min: 8 });
+        req.checkBody('email', 'Email is not valid').isEmail();
+        req.checkBody('password', 'Password is not valid').isLength({ min: 8 });
         let errors = req.validationErrors();
         let response = {};
         if (errors) {
             console.log(errors);
             response.success = false;
             response.error = errors;
-            return res.status(422).send(response);
+            return res.status(401).send(response);
         }
         else {
             userService.login(req.body, (err, data) => {
@@ -58,7 +58,7 @@ module.exports.login = (req, res) => {
                 }
                 else {
                     var jwt = require('jsonwebtoken');
-                    var token = jwt.sign({ id: data._id }, 'secretKey', { expiresIn: 1400 });
+                    var token = jwt.sign({ id: data._id }, 'secretKey', { expiresIn: '1w' });
                     return res.status(200).send({
                         message: data,
                         "token": token
@@ -72,14 +72,14 @@ module.exports.login = (req, res) => {
 }
 module.exports.forgotPassword = (req, res) => {
     try {
-        req.check('email', 'Email is not valid').isEmail();
+        req.checkBody('email', 'Email is not valid').isEmail();
         let errors = req.validationErrors();
         let response = {};
         if (errors) {
             console.log(errors);
             response.success = false;
             response.error = errors;
-            return res.status(422).send(response);
+            return res.status(401).send(response);
         }
         else {
             userService.forgotPassword(req.body, (err, data) => {
@@ -111,15 +111,15 @@ module.exports.forgotPassword = (req, res) => {
 }
 module.exports.resetPassword = (req, res) => {
     try {
-        req.check('newPassword', 'Password is not valid').isLength({ min: 8 });
-        req.check('confirmPassword', 'Confirm password is not valid').isLength({ min: 8 }).equals(req.body.confirmPassword);
+        req.checkBody('newPassword', 'Password is not valid').isLength({ min: 8 });
+        req.checkBody('confirmPassword', 'Confirm password is not valid').isLength({ min: 8 }).equals(req.body.confirmPassword);
         let errors = req.validationErrors();
         let response = {};
         if (errors) {
             console.log(errors);
             response.success = false;
             response.error = errors;
-            return res.status(422).send(response);
+            return res.status(401).send(response);
         }
         else {
             userService.resetPassword(req, (err, data) => {

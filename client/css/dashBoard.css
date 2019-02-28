@@ -51,7 +51,7 @@ nav {
   text-align: left;
   cursor: pointer;
   overflow-y:scroll;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
   
 /* Style the list inside the menu */
@@ -81,7 +81,7 @@ article section{
   height: 90%;
   color: rgb(164, 175, 185);
   overflow-y: scroll;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .text{ 
   width: 75%;

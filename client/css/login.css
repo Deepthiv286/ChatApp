@@ -2,8 +2,8 @@
 h2{
     font-size: 2em;
     padding: 15px;
-    color:black;
     text-align: center;
+    color:rgb(109, 139, 153);
     border-end-end-radius: 2px solid;
     background: #13303f
 }
@@ -45,6 +45,18 @@ label {
 }
 label:after { 
     content: " : " 
+}
+span{
+    font-size: 12px;
+    text-align: left;
+}
+input.ng-touched.ng-invalid{
+    border-color: red;
+    border-radius: 5px;
+}
+input.ng-touched.ng-valid{
+    border-color: lightgreen;
+    border-radius: 5px;
 }
 .emailBox{
     text-align: left;
