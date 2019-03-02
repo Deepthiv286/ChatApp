@@ -1,4 +1,5 @@
 const userService = require('../services/service');
+const jwt = require('jsonwebtoken');
 const genToken = require('../middleware/token');
 const sendMail = require('../middleware/sendMail');
 
@@ -40,6 +41,7 @@ module.exports.login = (req, res) => {
     try {
         req.checkBody('email', 'Email is not valid').isEmail();
         req.checkBody('password', 'Password is not valid').isLength({ min: 8 });
+        let secretKey = "abcde";
         let errors = req.validationErrors();
         let response = {};
         if (errors) {
@@ -57,8 +59,7 @@ module.exports.login = (req, res) => {
                     });
                 }
                 else {
-                    var jwt = require('jsonwebtoken');
-                    var token = jwt.sign({ id: data._id }, 'secretKey', { expiresIn: '1w' });
+                    let token = jwt.sign({ email: req.body.email, id: data[0]._id }, secretKey, { expiresIn: 604800 });
                     return res.status(200).send({
                         message: data,
                         "token": token
@@ -144,11 +145,13 @@ module.exports.getAllUser = (req, res) => {
     userService.getAllUser(req.body, (err, data) => {
         let response = {};
         if (err) {
-            return callBack(err);
+            response.success = false;
+            response.message = "gffhfh";
+            return res.status(404).send(response);
         }
         else {
             response.success = true;
-            response.error = data;
+            response.result = data;
             return res.status(200).send(response);
         }
     });

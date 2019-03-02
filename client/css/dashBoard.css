@@ -1,96 +1,169 @@
 *{
-  box-sizing: border-box;
-  width: 100%;
+	box-sizing: border-box;
+	/* width: 100%; */
+} 
+/* Add a black background color to the top navigation */
+.topnav {
+	background-color: rgb(4, 33, 49);
+	border-radius: 15px;
+	text-align: center;
+	padding: 5px;
+  overflow: hidden;
 }
-.singleChat {
-  font-family: Arial, Helvetica, sans-serif;
+.heading{
+	text-align: center;
+	font-size: 30px;
+	display: inline;
+	margin-left: 35%;
+	color: beige
 }
-span{
-  font-size: 60%;
-  float:left;
-  margin-right:90px
+.logerName{
+	text-align: center;
+	font-size: 30px;
+	color: beige;
 }
-.chat .chatMsg{
-  width: 100%;
-  /* color: red; */
-  padding: 10px;
-  margin:0px,0px,0px;
-  border-radius: 00px;
-  font-size: 20px
-}
-.friend .chatMsg{
-  background-color:rgb(17, 91, 114);
-  color:rgb(24, 23, 23);
-  text-align: left;
-}
-.self .chatMsg{
-  color: rgb(17, 17, 17);
-  text-align: right;
-  background: rgb(25, 121, 177);
-}
-  
-/* Style the header */
-header {
-  background-color: rgb(18, 85, 148);
-  padding: 5px;
-  text-align: center;
-  font-size: 25px;
+/* Add an active class to highlight the current page */
+.active {
+	background-color: rgb(12, 77, 138);
+	margin-left: 30%;
+	border: 1px solid;
+	border-radius: 15px;
+	padding:5px;
+	display:inline;
   color: white;
 }
-.logbutton{
-  width: 10%;
+.singleChat {
+	font-family: 'Times New Roman';
+}
+span{
+	font-size: 60%;
+	float:left;
+	margin-right:90px
+}
+.chat .chatMsg{
+	width: 100%;
+	padding: 10px;
+	margin:0px,0px,0px;
+	border-radius: 3%;
+	font-size: 20px;
+}
+.friend .chatMsg{   
+	background-color: rgb(10, 64, 88);
+	color:#fff;
+	text-align: left;
+}
+.self .chatMsg{
+	background-color: rgb(2, 22, 48);
+	text-align: right;
+	color:#fff;
+	border-radius: 5%;
 }
   
-/* Create two columns/boxes that floats next to each other */
+  
+  
+  /* Style the header */
+
+
+  
+  /* Users list. Create two columns/boxes that floats next to each other.*/
 nav {
-  float: left;
-  width: 30%;
-  height: 440px; /* only for demonstration, should be removed */
-  background: rgb(3, 49, 92);
-  padding: 20px;
-  text-align: left;
-  cursor: pointer;
-  overflow-y:scroll;
-  /* overflow-x: hidden; */
+	float: left;
+	border-radius: 15px;
+	width: 29%;
+	height: 450px; /* only for demonstration, should be removed */
+	background-color: #ffffff;
+  border: 2px solid black;
+  opacity: 0.6;
+	padding: 40px;
+	text-align: left;
+	cursor: pointer;
+	font-family: 'Times New Roman';
+	font-weight: bold;
+	color: #1a237e;
+	font-style: italic;
+	text-align: center;
+	overflow-y:scroll;
+	overflow-x: scroll;
+	
 }
   
-/* Style the list inside the menu */
+  /* Style the list inside the menu */
 nav ul {
-  text-align: center;
-} 
-.gropChat{
-  float:right;
-  width: 70%;
-  height: 100%;
-  margin: 0px 0px 0px;
+	text-align: center;
 }
+  
+.gropChat{
+	float:right;
+	width: 70%;
+	height: 100%;  
+	margin: 0px 0px 0px;
+}
+  
 article {
-  float:right;
-  padding: 70px;
-  width: 70%;
-  height: 440px; /* only for demonstration, should be removed */
-  background-color: rgb(7, 71, 131);
-}  
+	float:right;
+	padding: 100px;
+	width: 71%;
+	height:450px; /* only for demonstration, should be removed */
+	background-color: #ffffff;
+  border: 2px solid black;
+  opacity: 0.6;
+	border-radius: 2%
+}
+  
 .username{
-  margin:0px 10px 0px 0px;
-  color:rgb(20, 20, 20)
+	margin:0px 10px 0px 0px;
+	color:rgb(6, 56, 85);
+	font-family: 'Times New Roman';
+	font-weight: bold;
+	font-style: italic
 }
 article section{
-  float:right;
-  width: 100%;
-  height: 90%;
-  color: rgb(164, 175, 185);
-  overflow-y: scroll;
-  /* overflow-x: hidden; */
+	float:right;   
+	width: 100%;
+	height: 90%;
+	color: rgb(13, 16, 17);
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .text{ 
-  width: 75%;
-  box-sizing: border-box;
-  display: inline-block;
+	margin: 30px 70px 0px 0px;
+	box-sizing: border-box;
+	border: 0.5px solid #fff;
+  border-radius: 10px;
+	box-shadow: 0px 0px 0px #000;
+	box-sizing: border-box;
+  margin: 5% auto;
+  text-align: center;
+  font-family: 'Times New Roman';
+  background: linear-gradient(to bottom, rgba(95, 191, 247, 0.8) 0%, rgba(0,0,0,0.6) 100%);
+  transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+	transform: scale(1);
+	/* border-block-end-color: black; */
+	border-color: black;
+	display:inline;
 }
-.sendbtn{
-  width: 10%;
-  margin-left: 75%;
-  padding: 0%;
-  display: initial;
+
+.sendclick{
+	display: inline;
+	padding: 0%;
 }
+  
+.con-list{
+	text-align: center;
+	font-family: 'Times New Roman';
+}
+
+.dashboard{
+	background-image: url('../assets/loginBackground.jpg');
+}
+.dashboard-body{
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  overflow: auto;
+  font-family: 'Times New Roman',
+
+  
+}
+
+

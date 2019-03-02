@@ -14,10 +14,17 @@ app.service('loginService', function ($http, $location) {
                     /**
                      * function to proceed with login if successfull
                      */
-                    console.log("Login successfull");
-                    $location.path('/dashBoard');
-                    console.log(response);
+                    console.log("Login successfullyyyyyy ");
+                    let userid = response.data.message[0]._id;
+                    console.log(userid);
+                    
+                    let name = response.data.message[0].firstName;
+                    let token = response.data.token;
+                    localStorage.setItem("userid", userid);
+                    localStorage.setItem("name", name);
+                    localStorage.setItem("token", token);
                     $scope.loginMessage = "Login successfull";
+                    $location.path('dashBoard');
                 },
                 function errorCallBack(error) {
                     /**

@@ -56,7 +56,7 @@ userModel.prototype.register = (body, callBack) => {
                         return callBack(err);
                     }
                     else {
-                        console.log("Registered successfully", result);
+                        console.log("Data saved successfully", result);
                         return callBack(null, result);
                     }
                 })
@@ -135,7 +135,7 @@ userModel.prototype.resetPassword = (res, callBack) => {
         console.log(error.message);
     }
 }
-userModel.prototype.getAllUser = (req,callBack) => {
+userModel.prototype.getAllUser = (callBack) => {
     user.find({}, (err, data) => {
         if (err) {
             return callBack("Error in the model" + err);

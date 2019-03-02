@@ -14,9 +14,9 @@ app.service('resetPasswordService', function ($http, $location) {
                      * function to proceed with reset password if successfull
                      */
                     console.log("Reset password successfull");
-                    $location.path('/login');
                     console.log(response);
                     $scope.resetPasswordMessage = "Reset password successfull";
+                    $location.path('/login');
                 },
                 function errorCallBack(response) {
                     /**

@@ -14,9 +14,9 @@ app.service('registerService', function ($http, $location) {
                      * function to proceed with registration if successfull
                      */
                     console.log("registration successfull");
-                    $location.path('/login');
                     console.log(response);
                     $scope.registerMessage = "Registration successfull";
+                    $location.path('/login');
                 },
                 function errorCallBack(response) {
                     /**

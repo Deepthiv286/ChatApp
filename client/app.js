@@ -29,14 +29,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             /**
              * assigning values to the properties
              */
-            url: '/resetPassword/:token',
+            url: '/resetPassword',
             templateUrl: 'template/resetPassword.html',
             controller: 'resetPasswordCtrl'
         })
         .state('dashBoard',{
             url: '/dashBoard',
             templateUrl: 'template/dashBoard.html',
-            controller: 'chatCtrl'
+            controller: 'chatController'
         })
     /**
      *go to login page if no other option is given 
@@ -45,7 +45,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 });
 app.service('SocketService', ['socketFactory', function SocketService(socketFactory){
     return socketFactory({
-        ioSocket: io.connect('http://localhost:3000')  
+        ioSocket: io.connect('http://localhost:5000')  
         /**
          * connecting socket io
          */

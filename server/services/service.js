@@ -41,7 +41,7 @@ exports.resetPassword = (req, callBack) => {
     })
 }
 exports.getAllUser = (req,callBack)=>{
-    model.getAllUser(req, (err, data) => {
+    model.getAllUser((err, data) => {
         if (err) {
             return callBack(err);
         }

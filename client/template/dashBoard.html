@@ -2,27 +2,30 @@
 
 <head>
     <link rel="stylesheet" href="../css/dashBoard.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body ng-controller="chatCtrl">
+<body ng-controller="chatControl" class="dashboard">
     <header>
-        <h2>CHAT APP</h2>
-        <span class="user">Welcome {{currUserName}}</span>
-        <button type="button" ng-click="logout()" ui-sref="login" style="float: unset;" style="margin:660px" class="logbutton">Log
-            Out</button>
+        <div class="topnav" id="myTopnav">
+            <p class="heading">Welcome to ChatApp</p>
+            <button class="active" ng-click="logout()">Sign out</button>
+            <p class="logerName">{{currUserName}}</p>
+            </a>
+        </div>
     </header>
     <section>
         <nav>
+            <a class="">New chat</a>
+            <i class="fas fa-comment-alt"></i>
             <ul>
-                <p>Contact List</p>
-
+                <p class="con-list">Users List</p>
             </ul>
-            <p ng-repeat="x in allUser" ng-click="person(x)" ng-show="currUserName!=x.firstname">
-                {{x.firstname}}</p>
+            <p ng-repeat="x in allUser" ng-click="person(x)" ng-show="currUserName!=x.firstName">
+                {{x.firstName}}</p>
+            <!-- <a class="">{{getAllUsers}}</a> -->
         </nav>
-
         <article>
-
             <div class="groupChat">
                 <p class="username">{{recieverUserName}}</p>
             </div>
@@ -39,9 +42,9 @@
                     </div>
             </section>
             <div>
-                <textarea ng-model="message" ng-keyup="$event.keyCode == 13 && sendmessage()" rows="1" cols="60"
-                    class="text" placeholder="text here"></textarea>
-                <button type="button" ng-click=sendmessage(); class="sendbtn">Send</button>
+                <textarea ng-model="message" ng-keyup="$event.keyCode == 13 && sendMessage()" class="text"
+                    placeholder="Type to text"></textarea>
+                <button type="button" ng-click=sendMessage(); class="sendclick">Send</button>
             </div>
             </form>
         </article>

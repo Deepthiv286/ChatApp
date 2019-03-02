@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="../css/login.css" type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Chat app login page</title>
 </head>
 
@@ -14,6 +15,7 @@
                 <div class="emailBox">
                     <!--label and input box for email with user validations-->
                     <label for="email">Email-id</label>
+                    <i class="fa fa-envelope icon"></i>
                     <input type="email" name="email" ng-model="email" placeholder="Email-id" required />
                     <span style="color:red" ng-show="loginForm.email.$touched && loginForm.email.$invalid">
                         <span ng-show="loginForm.email.$error.required">Email-id is required.</span>
@@ -23,6 +25,7 @@
                 <div class="passwordBox">
                     <!--label and input box for password with user validations-->
                     <label for="password">Password</label>
+                    <i class="fa fa-key icon"></i>
                     <input type="password" name="password" ng-model="password"
                         ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,12}$/"
                         placeholder="Password" required />
@@ -39,7 +42,7 @@
                 </div>
                 <!--link for forgotPassword-->
                 <p class="forgotPassword">
-                    <a ui-sref="forgotPassword">Forgot password</a>
+                    <a ui-sref="forgotPassword">Forgot password?</a>
                 </p>
                 <p class="login-signup">
                     <a ui-sref="register">Register</a>

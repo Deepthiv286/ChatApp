@@ -72,10 +72,9 @@
                     <!--button to submit the registration-->
                     <button type="submit" class="btn" ng-click="register()"
                         ng-disabled="registerForm.$invalid">Signup</button>
-                    <a ui-sref=""></a>
-                    <button type="button" class="cancelBtn" ui-sref="login">Signin</button>
                 </div>
-
+                <p class="cancel">Already have an account?
+                    <a ui-sref="login">Signin</a></p>
             </div>
         </form>
     </div>

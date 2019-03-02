@@ -12,27 +12,31 @@
  * to include the HTTP module
  */
 const http = require('http');
+/**
+ * importing express
+ */
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const routes = require('./router/routes');
+const router = require('./router/routes');
 const mongoose = require('mongoose');
 const db = require('./config/config');
 const PORT = 5000;
+/**
+ * importing socket io
+ */
+const socketIO = require('socket.io');
+const chatController = require('./controller/chatController');
+const server = http.createServer(app);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const expressValidator = require('express-validator');
 app.use(expressValidator());
-/**
- * calling router
- */
-app.use('/', routes);
-app.use(express.static('../client'));
-const server = app.listen(PORT, function () {
-    console.log("Server running on localhost : " + PORT);
-})
-const chatController = require('./controller/chatController');
-const io = require('socket.io')(server);
+
+
+
+
+const io = socketIO(server);
 /**
 * connecting to the socket
 */
@@ -53,7 +57,7 @@ io.on('connection', function (socket) {
                 /**
                  * emits message to all the sockets connected to it
                  */
-                io.emit('newMessageSingle', message);
+                io.emit('newMessage', message);
             }
         })
         /**
@@ -64,8 +68,18 @@ io.on('connection', function (socket) {
         });
     });
 });
-const cors = require('cors');
-app.use(cors());
+app.use(express.static('../client'));
+/**
+ * calling router
+ */
+app.use('/', router);
 mongoose.connect(db.url, { useNewUrlParser: true })
-    .then(() => console.log("MongoDB connected."))
-    .catch(err => console.log(err))
+    .then(() => {
+        console.log("Mongodb is connected");
+    }).catch(err => {
+        console.log("could not connect to database");
+        process.exit();
+    });
+server.listen(PORT, function () {
+    console.log("Server running on localhost : " + PORT);
+})

@@ -1,4 +1,5 @@
 app.controller('registerCtrl', function ($scope, registerService) {
+    
     $scope.register = function () {
         let data = {
             'firstName': $scope.firstName,

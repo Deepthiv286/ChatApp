@@ -1,6 +1,6 @@
 const chatServices = require('../services/chatService');
 
-module.exports.addMessage = (req, res) => {
+module.exports.message = (req, res) => {
     try {
         chatServices.addMessage(req, (err, data) => {
             if (err) {
@@ -14,7 +14,7 @@ module.exports.addMessage = (req, res) => {
         console.log(error.message);
     }
 }
-module.exports.message = (req, res) => {
+module.exports.getUserMsg = (req, res) => {
     try {
         chatServices.getUserMsg(req, (err, data) => {
             var response = {};

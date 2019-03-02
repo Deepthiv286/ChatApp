@@ -12,15 +12,15 @@
  * 
  * **********************************************************/
 const jwt = require('jsonwebtoken');
-
-exports.authen = function (req, res, next) {
+const secretKey = "abcde";
+const auth = function (req, res, next) {
     try {
         let token = req.headers["token"];
         console.log(token);
         let response = {
             'message': "Unauthorised user "
         };
-        jwt.verify(token, 'secretKey', function (err, decodedData) {
+        jwt.verify(token, secretKey, function (err, decodedData) {
             if (err) {
                 console.log(err)
                 return res.status(401).send(response);
@@ -32,6 +32,7 @@ exports.authen = function (req, res, next) {
         });
     }
     catch (err) {
-        console.log("found error in generating tocken")
+        console.log("Error in generating token")
     }
 }
+module.exports = auth;
