@@ -1,3 +1,12 @@
+/************************************************************
+ * Purpose : user controller with express validator
+ * 
+ * file : userController.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 20/02/2019
+ * 
+ *************************************************************/
 const userService = require('../services/service');
 const jwt = require('jsonwebtoken');
 const genToken = require('../middleware/token');
@@ -9,7 +18,7 @@ module.exports.register = (req, res) => {
         req.checkBody('lastName', 'Last name is not valid').isLength({ min: 1 }).isAlpha();
         req.checkBody('email', 'Email is not valid').isEmail();
         req.checkBody('password', 'Password is not valid').isLength({ min: 8 });
-        req.checkBody('confirmPassword','Confirm password is not valid').equals(req.body.password);
+        req.checkBody('confirmPassword', 'Confirm password is not valid').equals(req.body.password);
         let errors = req.validationErrors();
         let response = {};
         if (errors) {

@@ -1,8 +1,17 @@
-var express = require('express');
-var router = express.Router();
-var userController = require('../controller/userController');
-var chatController = require("../controller/chatController");
-var auth = require('../authentication/authentication');
+/************************************************************
+ * Purpose : getting all users and messages with authorization
+ * 
+ * file : authorization.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 22/02/2019
+ * 
+ *************************************************************/
+const express = require('express');
+const router = express.Router();
+const userController = require('../controller/userController');
+const chatController = require("../controller/chatController");
+const auth = require('../authentication/authentication');
 function getAll() {
     try {
         router.get('/getAllUser', auth, userController.getAllUser);

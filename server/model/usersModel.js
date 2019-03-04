@@ -1,3 +1,12 @@
+/************************************************************
+ * Purpose : user schema
+ * 
+ * file : userModel.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 20/02/2019
+ * 
+ *************************************************************/
 const mongoose = require('mongoose');
 /**
  * accessing/importing mongoose

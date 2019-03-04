@@ -1,15 +1,21 @@
-console.log("sdfhjk");
-
+/************************************************************
+ * Purpose : using local storage for chat
+ * 
+ * file : chatController.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 22/02/2019
+ * 
+ *************************************************************/
 app.controller('chatController', function ($scope, SocketService, $state, chatServices) {
-    
-    
+
+
     $scope.message = '';
     $scope.allUserArr = [];
     $scope.currUserName = localStorage.getItem('name');
     $scope.currUser = localStorage.getItem('userid');
     $scope.recieverUserName = localStorage.getItem('rusername');
-    console.log("===============",$scope.recieverUserName);
-    var token = localStorage.getItem("token");  
+    var token = localStorage.getItem("token");
     if (token === null) {
         /**
          * goes to login page if token is null
@@ -45,8 +51,6 @@ app.controller('chatController', function ($scope, SocketService, $state, chatSe
     }
     $scope.getAllUsers();
     $scope.person = function (userData) {
-        console.log("================",userData);
-        
         /**
          * select person from the list
          */

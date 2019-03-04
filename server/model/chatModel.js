@@ -1,10 +1,19 @@
+/************************************************************
+ * Purpose : chat model takes place
+ * 
+ * file : chatModel.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 27/02/2019
+ * 
+ *************************************************************/
 const mongoose = require('mongoose');
 const mongoSchema = mongoose.Schema;
 const chatSchema = new mongoSchema({
-    'senderUserId': { type: String},
-    'senderName': { type: String},
-    'recieverUserId': { type: String},
-    'recieverName': { type: String},
+    'senderUserId': { type: String },
+    'senderName': { type: String },
+    'recieverUserId': { type: String },
+    'recieverName': { type: String },
     'message': { type: String }
 }, {
         timestamps: true
@@ -23,8 +32,8 @@ chatModel.prototype.addMessage = (chatData, callBack) => {
         'recieverName': chatData.recieverName,
         'message': chatData.message
     });
- 
-    
+
+
     newMsg.save((err, data) => {
         if (err) {
             console.log("Storing data failed");

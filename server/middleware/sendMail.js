@@ -1,3 +1,12 @@
+/************************************************************
+ * Purpose : sending mail using node mailer
+ * 
+ * file : sendMail.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 25/02/2019
+ * 
+ *************************************************************/
 const nodemailer = require('nodemailer');
 /**
  * use event emitters
@@ -8,7 +17,7 @@ exports.sendEmailFunction = (url) => {
             service: 'gmail',
             auth: {
                 user: 'deepthiv286@gmail.com',
-                pass: 'd55p20h9@5'
+                pass: ''
             },
         });
         const mailOptions = {

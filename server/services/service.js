@@ -1,3 +1,12 @@
+/************************************************************
+ * Purpose : user service 
+ * 
+ * file : userService.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 20/02/2019
+ * 
+ *************************************************************/
 const model = require('../model/usersModel');
 
 exports.login = (req, callBack) => {
@@ -40,7 +49,7 @@ exports.resetPassword = (req, callBack) => {
         }
     })
 }
-exports.getAllUser = (req,callBack)=>{
+exports.getAllUser = (req, callBack) => {
     model.getAllUser((err, data) => {
         if (err) {
             return callBack(err);

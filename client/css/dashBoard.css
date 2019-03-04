@@ -71,7 +71,7 @@ nav {
 	border-radius: 15px;
 	width: 29%;
 	height: 450px; /* only for demonstration, should be removed */
-	background-color: #ffffff;
+	background-color: rgba(9, 76, 114, 0.8);
   border: 2px solid black;
   opacity: 0.6;
 	padding: 40px;
@@ -104,7 +104,7 @@ article {
 	padding: 100px;
 	width: 71%;
 	height:450px; /* only for demonstration, should be removed */
-	background-color: #ffffff;
+	background-color: rgba(9, 76, 114, 0.8);
   border: 2px solid black;
   opacity: 0.6;
 	border-radius: 2%
@@ -135,7 +135,7 @@ article section{
   margin: 5% auto;
   text-align: center;
   font-family: 'Times New Roman';
-  background: linear-gradient(to bottom, rgba(95, 191, 247, 0.8) 0%, rgba(0,0,0,0.6) 100%);
+  background: linear-gradient(to bottom, rgba(151, 209, 238, 0.8) 0%, rgba(0,0,0,0.6) 100%);
   transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
 	transform: scale(1);
 	/* border-block-end-color: black; */
@@ -150,6 +150,7 @@ article section{
   
 .con-list{
 	text-align: center;
+	color: beige;
 	font-family: 'Times New Roman';
 }
 

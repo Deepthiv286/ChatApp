@@ -43,9 +43,7 @@ app.service('chatServices', function ($http) {
                 }
             }).then(
                 function successCallBack(response) {
-                    console.log("service",response.data.message);
-
-                    for (let i = 0; i < (response.data.message); i++) { 
+                    for (let i = 0; i < (response.data.message); i++) {
                         a = response.data.message[i];
                         if (((localStorage.getItem('userid') == a.senderUserId) && (localStorage.getItem('ruserId') == a.recieverUserId)) || ((localStorage.getItem('userid') == a.recieverUserId && localStorage.getItem('ruserId') == a.senderUserId))) {
                             console.log("Local user is ", localStorage.getItem('userid'), "a user is ", a.senderUserId, " local rcvrid is ", localStorage.getItem('ruserId'), "  receiver is ", a.recieverUserId);

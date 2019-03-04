@@ -1,3 +1,4 @@
+
 const app = angular.module('myChatApp', ['ui.router','btford.socket-io']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {

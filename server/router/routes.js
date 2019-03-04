@@ -1,3 +1,12 @@
+/************************************************************
+ * Purpose : api calls takes place
+ * 
+ * file : routes.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 20/02/2019
+ * 
+ *************************************************************/
 const userCtrl = require('../controller/userController');
 // const chatCtrl = require('../controller/chatController');
 const author = require('./authorization');

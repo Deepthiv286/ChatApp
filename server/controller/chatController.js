@@ -1,3 +1,12 @@
+/************************************************************
+ * Purpose : chat controller takes place
+ * 
+ * file : chatController.js
+ * @author: Deepthi V <deepthiv286@gmail.com>
+ * @version : 1.0
+ * @since : 27/02/2019
+ * 
+ *************************************************************/
 const chatServices = require('../services/chatService');
 
 module.exports.message = (req, res) => {
